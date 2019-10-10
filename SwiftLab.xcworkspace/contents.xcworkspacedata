@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:RichApp/RichApp.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:TableviewDemo/TableviewDemo.xcodeproj">
    </FileRef>
    <FileRef
