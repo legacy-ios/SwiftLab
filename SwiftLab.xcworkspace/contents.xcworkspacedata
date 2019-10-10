@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:TableviewDemo/TableviewDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Lab01/Lab01.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:AutoLayoutDemo/AutoLayoutDemo.xcodeproj">
+   </FileRef>
+</Workspace>
