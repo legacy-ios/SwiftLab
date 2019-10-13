@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Quizzier/Quizzier.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:EggTimer/EggTimer.xcodeproj">
    </FileRef>
    <FileRef
