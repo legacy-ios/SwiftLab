@@ -17,17 +17,25 @@ class ViewController: UIViewController {
     var timer = Timer()
     var totalTime = 0
     var secondPassed = 0
-    var player = AVAudioPlayer()
+    var player: AVAudioPlayer?
     override func viewDidLoad() {
         super.viewDidLoad()
-        setSound(soundName: "alarm_sound")
+        let path = Bundle.main.path(forResource: "alarm_sound.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            
+        } catch {
+            // couldn't load file :(
+        }
         // Do any additional setup after loading the view.
     }
 
     @IBAction func eggClicked(_ sender: UIButton) {
 
         timer.invalidate()
-        player.stop()
+        player!.stop()
 
         
         let hardNess = sender.currentTitle!;
@@ -41,11 +49,7 @@ class ViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         
     }
-    
-    func setSound(soundName: String) {
-        let url = Bundle.main.url(forResource: soundName, withExtension: "mp3")
-        player = try! AVAudioPlayer(contentsOf: url!)        
-    }
+
     
     @objc func updateTimer(){
         if secondPassed < totalTime{
@@ -56,7 +60,7 @@ class ViewController: UIViewController {
         }else{
             timer.invalidate()
             titleLabel.text = "DONE!"
-            player.play()
+            player!.play()
         }
     }
     
